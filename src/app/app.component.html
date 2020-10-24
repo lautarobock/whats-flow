@@ -1,2 +1,5 @@
-<wf-flow></wf-flow>
+<wf-flow [chats]="chats"></wf-flow>
+<div style="position: absolute; top: 20%; right: 20%;">
+    <wf-importer (read)="chats.push($event)"></wf-importer>
+</div>
 <router-outlet></router-outlet>

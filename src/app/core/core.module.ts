@@ -4,21 +4,25 @@ import { ChatComponent } from './chat/chat.component';
 import { FlowComponent } from './flow/flow.component';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatButtonModule } from '@angular/material/button';
+import { ImporterComponent } from './importer/importer.component';
 
 @NgModule({
     declarations: [
         ChatComponent,
-        FlowComponent
+        FlowComponent,
+        ImporterComponent
     ],
     exports: [
         FlowComponent,
-        ChatComponent
+        ChatComponent,
+        ImporterComponent
     ],
     imports: [
         CommonModule,
         MatListModule,
-        MatCardModule
+        MatCardModule,
+        MatButtonModule
     ]
 })
 export class CoreModule { }
