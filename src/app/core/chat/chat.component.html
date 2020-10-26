@@ -5,14 +5,6 @@
         </mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <div class="chat-item" *ngFor="let msg of chat.messages">
-            <div class="title">
-                {{msg.from}}
-                <span class="timestamp">{{msg.date | date:'dd/MM/yyyy HH:mm'}}</span>
-            </div>
-            <p>
-                {{msg.text}}
-            </p>
-        </div>
+        <wf-message-box *ngFor="let msg of chat.messages;" [msg]="msg"></wf-message-box>
     </mat-card-content>
 </mat-card>

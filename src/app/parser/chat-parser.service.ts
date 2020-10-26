@@ -11,6 +11,7 @@ export interface Message {
 export interface Chat {
     participants: string[];
     messages: Message[];
+    paddings: number[];
 }
 
 @Injectable({
@@ -31,7 +32,7 @@ export class ChatParserService {
             return { date, from, text };
         }).filter(m => m.from);
         const participants = _.uniq(messages.map(m => m.from));
-        return { messages, participants };
+        return { messages, participants, paddings: Array(messages.length).fill(0) };
     }
 
 }

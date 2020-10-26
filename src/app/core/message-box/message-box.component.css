@@ -1,0 +1,20 @@
+.chat-item {
+    display: block;
+    background-color: #fafad2;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: black;
+    padding: 5px;
+}
+
+.title {
+    font-weight: bold;
+    position: relative;
+}
+
+.title .timestamp {
+    font-weight: normal;
+    font-size: 11px;
+    position: absolute;
+    right: 0;
+}

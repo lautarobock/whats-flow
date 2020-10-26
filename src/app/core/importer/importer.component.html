@@ -2,3 +2,15 @@
     <label id="lbl">Code </label>
     <input type='file' (change)="fileChanged($event)">
 </div>
+<div>
+    Mensajes: {{chat?.messages.length}}
+</div>
+<div>
+    Primer mensaje: {{ initialDate | date:'dd/MM/yyyy HH:mm'}}
+</div>
+<div>
+    Ultimo mensaje: {{ finalDate | date:'dd/MM/yyyy HH:mm'}}
+</div>
+<button type="button" mat-flat-button color="primary" [disabled]="!chat">
+    <mat-icon>cloud_upload</mat-icon>
+</button>

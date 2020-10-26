@@ -1,0 +1,13 @@
+:host {
+    display: flex;
+}
+
+wf-chat {
+    margin-left: 1em;
+}
+
+th {
+    position: sticky !important;
+    top: 0;
+    background-color: white;
+}

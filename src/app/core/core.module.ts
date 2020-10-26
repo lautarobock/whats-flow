@@ -5,13 +5,16 @@ import { FlowComponent } from './flow/flow.component';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { ImporterComponent } from './importer/importer.component';
+import { MessageBoxComponent } from './message-box/message-box.component';
 
 @NgModule({
     declarations: [
         ChatComponent,
         FlowComponent,
-        ImporterComponent
+        ImporterComponent,
+        MessageBoxComponent
     ],
     exports: [
         FlowComponent,
@@ -22,7 +25,8 @@ import { ImporterComponent } from './importer/importer.component';
         CommonModule,
         MatListModule,
         MatCardModule,
-        MatButtonModule
+        MatButtonModule,
+        MatIconModule
     ]
 })
 export class CoreModule { }

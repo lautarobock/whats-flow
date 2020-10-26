@@ -1,1 +1,13 @@
-<wf-chat *ngFor="let chat of chats" [chat]="chat"></wf-chat>
+<!-- <wf-chat *ngFor="let chat of chats" [chat]="chat"></wf-chat> -->
+<table>
+    <tr>
+        <th *ngFor="let chat of chats" style="width: 400px; max-width: 400px;">
+            {{ chat.participants }}
+        </th>
+    </tr>
+    <tr *ngFor='let slot of slots; let idx = index'>
+        <td *ngFor="let msg of slot" style="width: 400px; max-width: 400px;">
+            <wf-message-box *ngIf="msg" [msg]="msg"></wf-message-box>
+        </td>
+    </tr>
+</table>
