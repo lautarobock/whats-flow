@@ -1,16 +1,32 @@
-<div class="Block">
-    <label id="lbl">Code </label>
-    <input type='file' (change)="fileChanged($event)">
-</div>
 <div>
-    Mensajes: {{chat?.messages.length}}
+    <label>Seleccione un archivo </label>
+    <input type='file' style="width: 100%;" (change)="fileChanged($event)">
 </div>
-<div>
-    Primer mensaje: {{ initialDate | date:'dd/MM/yyyy HH:mm'}}
+<div *ngIf="chat">
+    <div>
+        Mensajes: {{chat?.messages.length}}
+    </div>
+    <div>
+        Primer mensaje: {{ initialDate | date:'dd/MM/yyyy HH:mm'}}
+    </div>
+    <div>
+        Ultimo mensaje: {{ finalDate | date:'dd/MM/yyyy HH:mm'}}
+    </div>
+    <div>
+        Mensajes a importar: {{ count }}
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [min]="initialDate" [max]="finalDate" [rangePicker]="picker">
+                <input matStartDate [(ngModel)]="minDate" (dateChange)="datesChange()" placeholder="Start date">
+                <input matEndDate [(ngModel)]="maxDate" (dateChange)="datesChange()" placeholder="End date">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+    </div>    
 </div>
-<div>
-    Ultimo mensaje: {{ finalDate | date:'dd/MM/yyyy HH:mm'}}
-</div>
-<button type="button" mat-flat-button color="primary" [disabled]="!chat">
+<button type="button" mat-flat-button color="primary" (click)="upload()" [disabled]="!chat">
     <mat-icon>cloud_upload</mat-icon>
 </button>

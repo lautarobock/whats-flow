@@ -1,13 +1,21 @@
 :host {
-    display: flex;
+    display: block;
 }
 
-wf-chat {
-    margin-left: 1em;
+.spacer {
+    flex: 1 1 auto;
+}
+
+table {
+    background-color: #EEEEEE;
 }
 
 th {
     position: sticky !important;
     top: 0;
-    background-color: white;
+    width: 400px;
+    max-width: 400px;
+    height: 60px;
+    z-index: 1000;
+    background-color: lightgray;
 }

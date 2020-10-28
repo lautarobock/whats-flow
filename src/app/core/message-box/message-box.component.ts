@@ -9,6 +9,7 @@ import { Message } from 'src/app/parser/chat-parser.service';
 export class MessageBoxComponent implements OnInit {
 
     @Input() msg: Message;
+    @Input() color: string;
 
     constructor() { }
 

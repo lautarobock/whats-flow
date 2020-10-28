@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ParserModule } from './parser/parser.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { CoreModule } from './core/core.module';
     AppRoutingModule,
     ParserModule,
     CoreModule,
+    MatButtonModule,
     BrowserAnimationsModule
   ],
   providers: [],

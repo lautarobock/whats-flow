@@ -1,13 +1,34 @@
-<!-- <wf-chat *ngFor="let chat of chats" [chat]="chat"></wf-chat> -->
+
+<mat-toolbar color="primary">
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button> -->
+    <span matTooltip="Whats-a-Parallel">WaP</span>
+    <span class="spacer"></span>
+    <button (click)="deleteMessages()" mat-icon-button>
+        <mat-icon>delete</mat-icon>
+    </button>
+    <button (click)="addChat()" mat-icon-button>
+        <mat-icon>add</mat-icon>
+    </button>
+    <button mat-icon-button>
+        <mat-icon>share</mat-icon>
+    </button>
+</mat-toolbar>
 <table>
     <tr>
-        <th *ngFor="let chat of chats" style="width: 400px; max-width: 400px;">
-            {{ chat.participants }}
+        <th *ngFor="let chat of chats">
+            <!-- <span [style.color]="colors[p]" *ngFor="let p of chat.participants">
+                {{p}}, 
+            </span> -->
+            <span *ngFor="let p of chat.participants; let idx = index">
+                {{p}}<span *ngIf="idx !== chat.participants.length - 1">, </span> 
+            </span>
         </th>
     </tr>
     <tr *ngFor='let slot of slots; let idx = index'>
         <td *ngFor="let msg of slot" style="width: 400px; max-width: 400px;">
-            <wf-message-box *ngIf="msg" [msg]="msg"></wf-message-box>
+            <wf-message-box *ngIf="msg" [msg]="msg" [color]="colors[msg.from]"></wf-message-box>
         </td>
     </tr>
 </table>

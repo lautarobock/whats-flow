@@ -1,6 +1,6 @@
 <div class="chat-item">
     <div class="title">
-        {{msg.from}}
+        <span [style.color]="color">{{msg.from}}</span>
         <span class="timestamp">{{msg.date | date:'dd/MM/yyyy HH:mm'}}</span>
     </div>
     <p>

@@ -1,5 +1,8 @@
-<wf-flow [chats]="chats"></wf-flow>
-<div style="position: absolute; top: 20%; right: 20%;">
-    <wf-importer (read)="addChat($event)"></wf-importer>
+<wf-flow *ngIf="chats?.length" [chats]="chats"></wf-flow>
+<div *ngIf="!chats?.length" >
+    <!-- <wf-importer (read)="addChat($event)"></wf-importer> -->
+    <button mat-stroked-button (click)="addChat()" color="primary">
+        <mat-icon>add</mat-icon>
+    </button>
 </div>
 <router-outlet></router-outlet>
